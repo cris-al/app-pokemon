@@ -5,6 +5,12 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  /* background-color: #212121; */
+  color: #d3d1d1;
+  background-image: url('../img/charizard.png');
+  background-position: center center;
+  background-attachment: fixed;
+  background-size: cover;
 }
 
 code {
