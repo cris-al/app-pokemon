@@ -1,7 +1,7 @@
 import { GET_POKEMON } from "../actions/actions";
 
 const initialState = {
-    pokemon: {},
+    pokemons: [],
     detail: {}
 }
 
@@ -10,7 +10,7 @@ export default function reducer(state=initialState, action){
         case GET_POKEMON: 
             return{
                 ...state,
-                pokemon: action.payload
+                pokemons: [...state.pokemons, action.payload]
             }
 
         default:
