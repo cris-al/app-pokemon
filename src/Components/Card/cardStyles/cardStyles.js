@@ -38,8 +38,9 @@ export const CardContainer = styled.div`
 export const Image = styled.img`
     width: 150px;
     height: 150px;
-    filter: drop-shadow(4px 4px 5px black);
+    filter: drop-shadow(6px 6px 8px black);
     animation: animationimage 2s;
+    transition: 0.5s;
     @media (min-width: 375px) {
         width: 180px;
         height: 180px;
@@ -47,7 +48,6 @@ export const Image = styled.img`
     @media (min-width: 576px) {
         width: 230px;
         height: 230px;
-        filter: drop-shadow(6px 6px 8px black);
     }
     @media (min-width: 768px) {
         width: 340px;
@@ -56,15 +56,18 @@ export const Image = styled.img`
     @media (min-width: 992px) {
         width: 380px;
         height: 380px;
-        filter: drop-shadow(6px 6px 10px black);
     }
     @media (min-width: 1200px) {
         width: 480px;
         height: 480px;
     }
+    &:hover {
+        transform: scale(1.1);
+        filter: drop-shadow(6px 16px 8px black);
+    }
     @keyframes animationimage {
-        0%{ transform: scale(0); }
-        100%{ transform: scale(1); }
+        0%{ transform: translate(-1000px); }
+        100%{ transform: translate(0); }
     }
 `;
 
@@ -74,7 +77,8 @@ export const Content = styled.div`
     justify-content: start;
     gap: 0.8rem;
     width: 100%;
-    animation: animatioopacity 2s;
+    animation: animatioopacity 4s;
+    
     @keyframes animatioopacity {
         0%{ opacity: 0; }
         100%{ opacity: 1; }

@@ -12,19 +12,25 @@ export const useMain = () => {
     };
 
     function handleClick(e) {
-        setLoading(true);
         e.preventDefault();
-        axios.get("https://pokeapi.co/api/v2/pokemon/"+name.toLowerCase())
-        .then(res => {
-            const data = res.data;
-            setPokemon(data);
-        })
-        .catch(error=>console.log(error))
-        .finally(() => {
-            setLoading(false);
-            setName("");
-        });
-        
+        if(name){
+            setLoading(true);
+            setTimeout(() => {
+                axios.get("https://pokeapi.co/api/v2/pokemon/"+name.toLowerCase())
+                .then(res => {
+                    const data = res.data;
+                    setPokemon(data);
+                })
+                .catch(()=>{
+                    alert("No se encontro un pokemon con ese nombre");
+                    setPokemon({});
+                })
+                .finally(() => {
+                    setLoading(false);
+                    setName("");
+                });
+            }, 1000);
+        }
     };
 
     useEffect(() => {

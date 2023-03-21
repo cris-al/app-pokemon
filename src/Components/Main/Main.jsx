@@ -12,12 +12,11 @@ export default function Main() {
             <Container>
                 <Search name={name} handleChange={handleChange} pokemons={pokemons}
                     handleClick={handleClick} loading={loading}/>
-                { pokemon ? <Card pokemon={pokemon}/>
-                          : <MessageContainer>
-                                <Icon src={Arrowtop} alt="icono arrow"/>
-                                <Paragraph>Ingrese el nombre de un Pokemon</Paragraph>
-                            </MessageContainer> }
-                
+                { pokemon?.name ? <Card pokemon={pokemon} loading={loading}/>
+                                : <MessageContainer>
+                                        <Icon src={Arrowtop} alt="icono arrow"/>
+                                        <Paragraph>Ingrese el nombre de un Pokemon</Paragraph>
+                                    </MessageContainer> }
             </Container>
         </MainContainer>
     );

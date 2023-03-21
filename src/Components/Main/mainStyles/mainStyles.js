@@ -6,20 +6,19 @@ export const MainContainer = styled.div`
     align-items: center;
     width: 100vw;
     height: 100vh;
+    animation: anim 2s;
+    @keyframes anim {
+        0%{ opacity: 0; }
+        100%{ opacity: 1; }
+    }
 `;
 
 export const Container = styled.div`
     padding: 1rem;
     max-width: 1300px;
-    // @media (min-width: 375px) {
-    //     padding: 2rem 2.5rem;
-    // }
     @media (min-width: 576px) {
         padding-top: 2rem;
     }
-    // @media (min-width: 768px) {
-    //     padding: 2rem 5rem;
-    // }
 `;
 
 export const MessageContainer = styled.div`

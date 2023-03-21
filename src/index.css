@@ -1,3 +1,7 @@
+* {
+  font-family: 'Merienda', cursive;
+}
+
 body {
   margin: 0;
   background-image: url("assets/fondopikachu.png");

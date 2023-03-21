@@ -1,4 +1,4 @@
-import { Input, Icon, Button, Container } from "./searchStyles/searchStyles";
+import { Input, Icon, Button, Container, LoadButton } from "./searchStyles/searchStyles";
 import SearchIcon from "assets/search-icon.svg";
 
 export default function Search({ name, handleChange, handleClick, loading, pokemons }) {
@@ -14,8 +14,8 @@ export default function Search({ name, handleChange, handleClick, loading, pokem
                                 <option value="Charmander"></option>
                              </> }
             </datalist>
-            <Button onClick={handleClick}>
-                { loading ? <p>...</p>
+            <Button onClick={handleClick} disabled={loading}>
+                { loading ? <LoadButton />
                           : <Icon src={SearchIcon} alt="icono"/> }
             </Button>
         </Container>
